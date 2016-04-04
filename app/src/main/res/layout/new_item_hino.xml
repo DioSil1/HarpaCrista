@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/tile_heigth"
+    android:orientation="horizontal"
+    android:weightSum="10"
+    android:paddingLeft="@dimen/text_padding_left"
+    android:paddingRight="@dimen/text_padding_left"
+    android:gravity="center_vertical"
+    android:layout_gravity="center_vertical"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="9"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_hino_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1- Chuvas de Graças"
+            android:textSize="@dimen/primary_text_font"
+            android:textColor="@color/primary_text"/>
+
+        <TextView
+            android:id="@+id/item_hino_descricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:text="Deus prometeu com certeza\nChuvas de graças mandar..."
+            android:textSize="@dimen/second_text_font"
+            android:textColor="@color/second_text"/>
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/item_hino_favorito"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:padding="3dp"
+        android:src="@drawable/heart_outline"
+        android:background="@android:color/white"/>
+
+</LinearLayout>

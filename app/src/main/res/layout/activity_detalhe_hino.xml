@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+
+
+    <LinearLayout
+        android:id="@+id/detalhe_hino_botoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="7dp"
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/detalhe_hino_diminuir_fonte"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:text="@string/detalhe_hino_anterior"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/detalhe_hino_anterior"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="&lt;"
+            android:textSize="29sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/detalhe_hino_paginacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/second_text" />
+
+        <TextView
+            android:id="@+id/detalhe_hino_proximo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="&gt;"
+            android:textSize="29sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/detalhe_hino_aumentar_fonte"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="@string/detalhe_hino_proximo"
+            android:textColor="@color/colorPrimary"
+            android:textSize="21sp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_below="@id/toolbar"
+        android:id="@+id/detalhe_hino_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/detalhe_hino_botoes"
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/detalhe_hino_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:text="Hello"
+                android:textColor="@color/primary_text"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/detalhe_hino_autor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:text="F. J."
+                android:textColor="@color/second_text"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

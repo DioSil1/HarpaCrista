@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.harpacrista.view.GeneralSwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_hinos_swipe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/locais_conteudo_lista"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:isScrollContainer="false"
+        android:orientation="vertical"
+        android:windowSoftInputMode="adjustResize">
+
+
+        <ScrollView
+            android:id="@+id/hinos_list_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <SearchView
+                    android:theme="@style/Theme.AppCompat.Light"
+                    android:id="@+id/hinos_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="@android:string/search_go" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ListView
+            android:id="@+id/hinos_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/hinos_list_search"
+            android:divider="@android:color/transparent" />
+
+        <com.harpacrista.view.ProgressBarCircularIndeterminate
+            android:id="@+id/hinos_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/hinos_mensagem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/second_text"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</com.harpacrista.view.GeneralSwipeRefreshLayout>
