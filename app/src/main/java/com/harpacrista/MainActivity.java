@@ -2,6 +2,7 @@ package com.harpacrista;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
@@ -11,11 +12,14 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.harpacrista.adapter.PageAdapter;
 import com.harpacrista.app.App;
 import com.harpacrista.util.SpeakUtil;
+import com.harpacrista.view.FloatingActionButton;
+import com.harpacrista.view.FloatingActionMenu;
 import com.harpacrista.view.SlidingTabLayout;
 
 import java.util.List;
@@ -26,6 +30,8 @@ public class MainActivity extends ActionBarActivity {
     private ViewPager viewPager;
     public App app;
     public SlidingTabLayout tabLayout;
+    public FloatingActionMenu menu;
+    public FloatingActionButton fab1,fab2,fab3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +54,13 @@ public class MainActivity extends ActionBarActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (SlidingTabLayout) findViewById(R.id.tabs);
+        menu = (FloatingActionMenu) findViewById(R.id.menu1);
+        fab1 = (FloatingActionButton) findViewById(R.id.fab1);
+        fab2 = (FloatingActionButton) findViewById(R.id.fab2);
+        fab3 = (FloatingActionButton) findViewById(R.id.fab3);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.app_name);
+        buttons();
         updateFragments();
         loadActionBarColor();
 
@@ -61,12 +72,49 @@ public class MainActivity extends ActionBarActivity {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
            getWindow().setStatusBarColor(getResources().getColor(app.colorConfig.getColorDark()));
         }
+        menu.setMenuButtonColorNormal(getResources().getColor(app.colorConfig.getColor()));
+        menu.setMenuButtonColorPressed(getResources().getColor(app.colorConfig.getColorDark()));
     }
 
     private void updateFragments(){
         try {
             viewPager.setAdapter(new PageAdapter(this, getSupportFragmentManager(), app));
         }catch (IllegalStateException e){}
+    }
+
+    private void buttons(){
+        fab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = null;
+                it = new Intent(Intent.ACTION_VIEW);
+                it.setData(Uri.parse("https://plus.google.com/u/0/117469097355620160778"));
+                startActivity(it);
+
+            }
+        });
+
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = null;
+                it = new Intent(Intent.ACTION_VIEW);
+                it.setData(Uri.parse("https://twitter.com/diogosilva9898"));
+                startActivity(it);
+
+            }
+        });
+
+        fab3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = null;
+                it = new Intent(Intent.ACTION_VIEW);
+                it.setData(Uri.parse("https://facebook.com/diogosilvam"));
+                startActivity(it);
+
+            }
+        });
     }
 
     @Override

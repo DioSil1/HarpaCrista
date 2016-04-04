@@ -55,10 +55,10 @@ public class ConfigFragment extends Fragment {
     }
 
     private void loadValues() {
-        List<Cor> cores = App.getCores();
+        List<Cor> cores = app.getCores();
         for (Cor cor : cores) {
             View view = getActivity().getLayoutInflater().inflate(R.layout.new_item_cor, null);
-            view.findViewById(R.id.item_cor).setBackgroundColor(getResources().getColor(app.colorConfig.getColor()));
+            view.findViewById(R.id.item_cor).setBackgroundColor(getResources().getColor(cor.getColor()));
             view.setTag(cor);
             view.setOnClickListener(onCorClickListener());
             ui.coresMain.addView(view);
@@ -77,6 +77,8 @@ public class ConfigFragment extends Fragment {
                 int color = getResources().getColor(app.colorConfig.getColor());
                 activity.getSupportActionBar().setBackgroundDrawable(new ColorDrawable(color));
                 activity.tabLayout.setBackgroundColor(color);
+                activity.menu.setMenuButtonColorNormal(color);
+                activity.menu.setMenuButtonColorPressed(getResources().getColor(app.colorConfig.getColorDark()));
                 loadColor();
 
             }

@@ -7,4 +7,8 @@
     <dimen name="tile_heigth">72dp</dimen>
     <dimen name="text_padding_left">16dp</dimen>
     <dimen name="text_padding_top_bottom">20dp</dimen>
+    <dimen name="fab_size_normal">56dp</dimen>
+    <dimen name="fab_size_mini">40dp</dimen>
+    <dimen name="labels_text_size">14sp</dimen>
+
 </resources>

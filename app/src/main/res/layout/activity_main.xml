@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.harpacrista.MainActivity">
 
     <include android:id="@+id/toolbar"
@@ -21,5 +22,49 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/tabs"/>
+
+    <com.harpacrista.view.FloatingActionMenu
+        android:id="@+id/menu1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:menu_colorNormal="@color/colorPrimary"
+        app:menu_colorPressed="@color/colorPrimaryDark"
+        app:menu_colorRipple="@color/colorPrimary"
+        android:layout_gravity="bottom|end"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:padding="8dp">
+
+        <com.harpacrista.view.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#dd4b39"
+            app:fab_colorRipple="#dd4b39"
+            app:fab_colorPressed="#dd4b39"
+            android:src="@drawable/google_plus"
+            app:fab_label="Google +"/>
+
+        <com.harpacrista.view.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorPressed="#00aced"
+            app:fab_colorNormal="#00aced"
+            app:fab_colorRipple="#00aced"
+            android:src="@drawable/twitter"
+            app:fab_label="Twitter"/>
+
+        <com.harpacrista.view.FloatingActionButton
+            android:id="@+id/fab3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#3b5998"
+            app:fab_colorPressed="#3b5998"
+            app:fab_colorRipple="#3b5998"
+            android:src="@drawable/facebook"
+            app:fab_label="Facebook"/>
+
+    </com.harpacrista.view.FloatingActionMenu>
 
 </RelativeLayout>
